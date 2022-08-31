@@ -1,6 +1,5 @@
 require('dotenv').config();
 const express = require('express');
-const cors = require('cors');
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
@@ -22,19 +21,20 @@ let URL = mongoose.model('URL', urlSchema);
 // Basic Configuration
 const port = process.env.PORT || 3000;
 
-app.use(cors());
-
+// serving static file
 app.use('/public', express.static(`${process.cwd()}/public`));
 
+// basic routing
 app.get('/', (req, res) => {
   res.sendFile(process.cwd() + '/views/index.html');
 });
 
-// Your first API endpoint
+// API endpoint
 app.get('/api/hello', (req, res) => {
   res.json({ greeting: 'hello API' });
 });
 
+// listening for requests
 app.listen(port, () => {
   console.log(`Listening on port ${port}`);
 });
