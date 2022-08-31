@@ -1,29 +1,32 @@
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
+html, body {
+  font-family: 'Space Mono', monospace;
+  font-size: 25px;
+  height: 100%;
   color: #222;
-  background-color: #fff;
+  background-color: #FBE8A6;
   text-align: center;
   line-height: 1.4em;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.header{
+  padding: 0;
+  background-color: #303C6C;
+  color: white;
+  margin: 0;
+}
+
+p {
+  font-size: 18px;
 }
 
 main {
   padding: 0;
-  margin-top: 40px;
-}
-
-h3 {
-  margin-top: 30px;
-}
-
-
-
-.user-stories li {
-  margin-bottom: 1em;
-}
-
-a {
-  color: #2574a9;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 form {
@@ -43,4 +46,23 @@ input {
 input[type='text'] {
   width: 220px;
   text-align: center;
+}
+
+.example h2{
+  font-size: 22px;
+}
+
+.example a{
+  font-size: 18px;
+}
+
+a {
+  color: #2574a9;
+}
+
+footer {
+  padding: 15px;
+  margin-top: auto;
+  text-align: center;
+  flex-shrink: 0;
 }

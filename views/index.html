@@ -3,16 +3,18 @@
 <html>
   <head>
     <title>URL Shortener Microservice | freeCodeCamp.org</title>
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://cdn.freecodecamp.org/universal/favicons/favicon-16x16.png"
-    />
     <link href="/public/style.css" rel="stylesheet" type="text/css" />
   </head>
 
   <body>
-    <h1>URL Shortener Microservice</h1>
+    <div class="header">
+      <h1>URL Shortener Microservice</h1>
+      <h2>Generation of short URL</h2>
+      <p>Request example:  <code>POST https://project-urlshortener.iotardis.repl.co/api/shorturl</code>
+       -  <code>https://www.reddit.com/</code>
+      </p>
+    </div>
+    
     <main>
       <section>
         <form action="api/shorturl" method="POST">
@@ -24,9 +26,16 @@
           </fieldset>
         </form>
       </section>
+      <div class="example">
+        <h2>Example usage</h2>
+        <a href="">https://project-urlshortener.iotardis.repl.co/api/shorturl/2</a>
+        <h2>Will redirect to</h2>
+        <a href="https://www.youtube.com/">https://www.youtube.com/</a>
+      </div>
     </main>
     <footer>
       <p>By <a href="https://github.com/ioTardis">ioTardis</a></p>
     </footer>
   </body>
+
 </html>
