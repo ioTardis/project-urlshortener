@@ -47,7 +47,7 @@ app.post('/api/shorturl', bodyParser.urlencoded({ extended: false }) , (req, res
 
   // checking if URL is valid
   if (!originalURL.match(regex)) {
-    res.json({ error: 'invalid url'});
+    res.json({ error: 'invalid url' });
     return
   }
   
@@ -63,7 +63,7 @@ app.post('/api/shorturl', bodyParser.urlencoded({ extended: false }) , (req, res
           // adding or editing entry of original URL
           URL.findOneAndUpdate(
             { original: originalURL },
-            { original: originalURL, short: shortURL},
+            { original: originalURL, short: shortURL },
             { new: true, upsert: true },
             (err, savedURL) => {
               if (!err){
@@ -72,7 +72,7 @@ app.post('/api/shorturl', bodyParser.urlencoded({ extended: false }) , (req, res
               }
             }
           );
-        }
+        } else console.log(err);
   });
 });
 
@@ -80,10 +80,8 @@ app.post('/api/shorturl', bodyParser.urlencoded({ extended: false }) , (req, res
 app.get('/api/shorturl/:input', (req, res) => {
   let input = req.params.input;
   URL.findOne({ short: input }, (err, data) => {
-    if (!err && data != undefined){
+    if (!err && data != undefined) {
       res.redirect(data.original)
-    } else {
-      res.json('URL not Found');
-    }
+    } else res.json('URL not Found');
   });
 });
